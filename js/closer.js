@@ -22,14 +22,24 @@
 
 // what is the output?
 
-var num = 4;
-function outer(){
-    var num = 2;
-    function inner(){
-        num++;
-        var num = 3;
-        console.log(num);
+// var num = 4;
+// function outer(){
+//     var num = 2;
+//     function inner(){
+//         num++;
+//         var num = 3;
+//         console.log(num);
+//     }
+//     inner();
+// };
+// outer();
+
+let sum = a => b => b ? sum(a + b) : a;
+
+const sumNums = (x) => {
+    return function(y){
+        return y ? sumNums(x + y) : x;
     }
-    inner();
-};
-outer();
+}
+
+console.log(sumNums(10)(12)(3)());
