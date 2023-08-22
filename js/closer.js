@@ -34,12 +34,42 @@
 // };
 // outer();
 
-let sum = a => b => b ? sum(a + b) : a;
+// let sum = a => b => b ? sum(a + b) : a;
 
-const sumNums = (x) => {
-    return function(y){
-        return y ? sumNums(x + y) : x;
+// console.log( sum(2)(3)())
+
+// const sumNums = (x) => {
+//     return function(y){
+//         return y ? sumNums(x + y) : x;
+//     }
+// }
+
+// console.log(sumNums(10)(12)(3)());
+
+
+// const createBase= (x) =>{
+//     return (y) => {
+//        return x + y
+//     }
+// }
+
+// var addSix = createBase(6);
+// console.log( addSix(10))
+// console.log( addSix(21))
+
+
+for(var i =0; i<5; i++){
+    setTimeout(function log() {
+        console.log(i)
+    }, i *1000);
+}
+for(var i =0; i<5; i++){
+
+    function inner (i){    
+        setTimeout(function log() {
+            console.log(i)
+        }, i *1000);
     }
+    inner(i)
 }
 
-console.log(sumNums(10)(12)(3)());
