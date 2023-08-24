@@ -35,6 +35,7 @@ const newArray = [];
 
 
 // SET
-let setArray
+let setArray = [...new Set(duplicateArray)] 
+console.log('setArray:', setArray)
 
 console.log(newArray);

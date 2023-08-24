@@ -58,18 +58,29 @@
 // console.log( addSix(21))
 
 
-for(var i =0; i<5; i++){
-    setTimeout(function log() {
-        console.log(i)
-    }, i *1000);
-}
-for(var i =0; i<5; i++){
+// for(var i =0; i<5; i++){
+//     setTimeout(function log() {
+//         console.log(i)
+//     }, i *1000);
+// }
+// for(var i =0; i<5; i++){
 
-    function inner (i){    
-        setTimeout(function log() {
-            console.log(i)
-        }, i *1000);
-    }
-    inner(i)
+//     function inner (i){
+//         setTimeout(function log() {
+//             console.log(i)
+//         }, i *1000);
+//     }
+//     inner(i)
+// }
+
+
+
+// HIDE A PASSWORD
+const someFunc = () => {
+    const secret = 'secret';
+
+    return () => secret;
 }
 
+const getSecret =someFunc();
+console.log('getSecret:', getSecret)
