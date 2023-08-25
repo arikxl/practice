@@ -105,7 +105,7 @@ const twoSum3 = (nums, target) => {
     for (let i = 0; i < nums.length; i++) {
 
         newMap[target - nums[i]] = i;
-        if (newMap[nums[i]] >= 0) {
+        if (newMap[nums[i]] != null) {
             console.log('newMap:', newMap)
             return [newMap[nums[i]], i];
         }
@@ -116,4 +116,4 @@ const twoSum3 = (nums, target) => {
 
 
 console.log(twoSum1([1,2,3,4,5,6,88], 11))
-console.log(twoSum3([4,3,2,1,5,6,88], 5)) 
+console.log(twoSum3([1,2,3,4,5,6,88], 5)) 

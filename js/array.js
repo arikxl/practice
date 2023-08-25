@@ -51,4 +51,21 @@ const findTxtFiles = (array, type) => {
     // return array.flat(Infinity).filter(files=> files.slice(-3)===type) 
 }
 
-console.log(findTxtFiles(files, 'txt'))
+// console.log(findTxtFiles(files, 'txt'))
+
+const array11= [1,675,22,1,23,5,7,9,1,23,23,1,7,8,7,5,,3,2,9,8,7,4,23,1]
+
+let obj={ };
+array11.forEach((item) => {
+    obj[item] = obj[item] + 1||1;
+    // res[item]++
+})
+
+console.log('res:', obj)
+let keys = Object.keys(obj)
+let value = Object.values(obj)
+
+let max = Math.max(...value);
+let index = value.findIndex((item) =>  item === max)
+
+console.log(keys[index], max)
