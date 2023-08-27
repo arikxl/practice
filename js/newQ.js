@@ -115,5 +115,27 @@ const twoSum3 = (nums, target) => {
 }
 
 
-console.log(twoSum1([1,2,3,4,5,6,88], 11))
-console.log(twoSum3([1,2,3,4,5,6,88], 5)) 
+// console.log(twoSum1([1,2,3,4,5,6,88], 11))
+// console.log(twoSum3([1,2,3,4,5,6,88], 5))
+
+
+function calcHour(time) {
+    const [hour, min] = time.split(':');
+
+    const h = hour > 12 ? (hour - 12) : +hour;
+    const m = +min
+    console.log('h:', h)
+    console.log('m:', m)
+
+    const hourDegree = 360 * h/12
+    const minutesDegree = 360 * m/60
+    console.log('hourDegree:', hourDegree)
+    console.log('minutesDegree:', minutesDegree)
+
+    const diff = Math.abs(hourDegree - minutesDegree);
+
+    return diff > 180 ? 360-diff  : diff;
+
+}
+
+console.log( calcHour('15:50'))
